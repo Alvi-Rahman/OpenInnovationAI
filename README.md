@@ -25,31 +25,51 @@ The challenge involves the following:
 - Pydantic (for data validation)
 - Docker (optional, for cloud deployment)
 
-## Installation
 
-To set up the project locally, follow these steps:
+## Prerequisites
+
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/image-frame-processing-api.git
-    cd image-frame-processing-api
+    git clone https://github.com/Alvi-Rahman/OpenInnovationAI.git
+    cd OpenInnovationAI
     ```
 
-2. Create a virtual environment:
+2. Make sure MongoDB is up and running on PORT `27017`
+3. Make Sure Python `3.11.x+` is installed locally
+4. Create a Database named `OpenInnovationAIImageDB`
+
+
+## Installation (Locally with Docker)
+To set up the project locally with Docker, follow these steps:
+
+
+
+## Installation (Locally without Docker)
+
+To set up the project locally, follow these steps:
+
+1. Make sure you have Docker installed and running in your local
+2. run
+```bash
+docker-compose up
+```
+
+1. Create a virtual environment:
     ```bash
     python3 -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
-3. Install the required dependencies:
+2. Install the required dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Set up MongoDB:
+3. Set up MongoDB:
     - Install and run MongoDB locally, or create a free MongoDB Atlas cluster and configure the connection string in the environment variables.
 
-5. Run the server:
+4. Run the server:
     ```bash
     python app.py
     ```
