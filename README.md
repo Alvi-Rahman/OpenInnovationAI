@@ -44,9 +44,6 @@ The challenge involves the following:
 To set up the project locally with Docker, follow these steps:
 
 
-
-## Installation (Locally without Docker)
-
 To set up the project locally, follow these steps:
 
 1. Make sure you have Docker installed and running in your local
@@ -54,6 +51,9 @@ To set up the project locally, follow these steps:
 ```bash
 docker-compose up
 ```
+
+
+## Installation (Locally without Docker)
 
 1. Create a virtual environment:
     ```bash
