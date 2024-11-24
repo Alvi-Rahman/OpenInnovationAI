@@ -63,11 +63,11 @@ def read_and_insert_frames(collection: Collection, file_name: str):
     if not os.path.exists(data_path):
         raise ValueError("File Not Found")
     data = pd.read_csv(data_path)
-
-    filtered_db_data = collection.find({"depth": {"$nin": data["depth"].tolist()}})
+    data.dropna(how='all', inplace=True)
+    filtered_db_data = collection.find({"depth": {"$in": data["depth"].tolist()}})
     filtered_depths = [data["depth"] for data in filtered_db_data]
-    filtered_data = data[data["depth"].isin(filtered_depths)]
-    if not filtered_data.shape[0]:
+    filtered_data = data[~data["depth"].isin(filtered_depths)]
+    if filtered_data.empty:
         return {"Response": "No New Frames Found"}
     processed_data = preprocess_data(data)
     return insert_image_frames(processed_data, collection)
