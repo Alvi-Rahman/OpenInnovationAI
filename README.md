@@ -80,31 +80,10 @@ docker-compose up
 ### 1. **Upload Image Data**
 
 - **Endpoint**: `POST /upload`
-- **Description**: Upload a valid CSV file to be processed and stored in MongoDB.
-- **Request**:
-    - `file`: CSV file containing image data with pixel values from 0 to 255.
-- **Response**:
-    - Success message confirming upload.
 
 ### 2. **Fetch Image Frame by Depth Range**
 
 - **Endpoint**: `GET /frames`
-- **Description**: Fetch an image frame by specifying a `depth_min` and `depth_max`.
-- **Request**:
-    - `depth_min`: The minimum depth value (integer).
-    - `depth_max`: The maximum depth value (integer).
-- **Response**:
-    - A PNG/JPEG image of the resized frame with a custom color map applied.
-    - Status code 200 on success.
-
-### 3. **Validate Request/Response Format**
-
-Both request and response validation is handled using Pydantic data models. The request and response are validated against predefined schemas to ensure proper data formats and avoid errors.
-
-## Custom Color Map
-
-A custom color map is applied to the frames before returning the response. The color map is applied using `matplotlib` to give visual structure to the raw pixel values, improving the interpretability of the images.
-
 
 ## Deployment to the Cloud (AWS)
 
@@ -119,7 +98,18 @@ eb init -p docker <application-name>
 eb create <environment-name>
 ```
 
-3. Deploy the app to your preferred cloud service (AWS, GCP, Azure, or Heroku).
+## Tests
+
+This project includes some tests which might be helpful in terms of showcasing
+TDD lifecycle flow
+
+RUN the following command to run the tests (after activating `virtualenv`)
+
+```bash
+ python3 -m pytest
+```
+
+`python3 -m` is used to make sure we use the active python interpreter
 
 ## Technologies Used
 
