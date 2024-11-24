@@ -38,6 +38,7 @@ The challenge involves the following:
 2. Make sure MongoDB is up and running on PORT `27017`
 3. Make Sure Python `3.11.x+` is installed locally
 4. Create a Database named `OpenInnovationAIImageDB`
+5. Rename the `.env.txt` to `.env`
 
 
 ## Installation (Locally with Docker)
