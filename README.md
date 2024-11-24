@@ -105,21 +105,19 @@ Both request and response validation is handled using Pydantic data models. The 
 
 A custom color map is applied to the frames before returning the response. The color map is applied using `matplotlib` to give visual structure to the raw pixel values, improving the interpretability of the images.
 
-## Cloud Deployment (Optional)
 
-The solution can be deployed on a cloud platform for scalability. If using Docker, you can create a containerized version of the app and deploy it to cloud platforms like AWS, Google Cloud, or Heroku.
+## Deployment to the Cloud (AWS)
 
-To deploy:
-
-1. Build the Docker image:
-    ```bash
-    docker build -t image-frame-api .
-    ```
-
-2. Run the Docker container:
-    ```bash
-    docker run -p 5000:5000 image-frame-api
-    ```
+- Create a DocumentDB instance on AWS
+- Test the connection and create the DB as mentioned earlier
+- Then create a ELB application with necessary permissions and credentials
+- Install `aws` CLI and use `aws configure` to set configurations (Can also use `SSO`)
+- cd to project
+- run the following
+```bash
+eb init -p docker <application-name>
+eb create <environment-name>
+```
 
 3. Deploy the app to your preferred cloud service (AWS, GCP, Azure, or Heroku).
 
@@ -131,11 +129,3 @@ To deploy:
 - **NumPy**: For numerical operations and image manipulation.
 - **Matplotlib**: For color mapping.
 - **Pydantic**: For request and response validation.
-
-## Deployment to the Cloud (AWS)
-
-- Create a DocumentDB instance on AWS
-- Test the connection and create the DB as mentioned earlier
-- Then create a ELB application with necessary permissions and credentials
-- Install `aws` CLI and use `aws configure` to set configurations (Can also use `SSO`)
-- Also install `pip install awsebcli` inside the project
