@@ -1,0 +1,11 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/frames?depth_min=9000.1&depth_max=9000.5
+Accept: application/json
+
+###
+
+GET http://0.0.0.0:8000/frames?depth_min=9000.1&depth_max=9000.5
+Accept: application/json
+
+###
