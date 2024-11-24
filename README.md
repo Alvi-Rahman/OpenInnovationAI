@@ -123,19 +123,6 @@ To deploy:
 
 3. Deploy the app to your preferred cloud service (AWS, GCP, Azure, or Heroku).
 
-## Data Structure
-
-The CSV file contains pixel values with the following format:
-
-| depth | pixel_1 | pixel_2 | ... | pixel_200 |
-|-------|---------|---------|-----|-----------|
-| 1     | 255     | 128     | ... | 64        |
-| 2     | 245     | 130     | ... | 75        |
-| ...   | ...     | ...     | ... | ...       |
-
-- `depth`: The depth level of the image frame.
-- `pixel_1` to `pixel_200`: The pixel values (0-255) for the corresponding depth.
-
 ## Technologies Used
 
 - **Python**: The main programming language used.
@@ -145,3 +132,10 @@ The CSV file contains pixel values with the following format:
 - **Matplotlib**: For color mapping.
 - **Pydantic**: For request and response validation.
 
+## Deployment to the Cloud (AWS)
+
+- Create a DocumentDB instance on AWS
+- Test the connection and create the DB as mentioned earlier
+- Then create a ELB application with necessary permissions and credentials
+- Install `aws` CLI and use `aws configure` to set configurations (Can also use `SSO`)
+- Also install `pip install awsebcli` inside the project
