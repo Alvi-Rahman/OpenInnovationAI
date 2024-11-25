@@ -67,12 +67,9 @@ docker-compose up
     pip install -r requirements.txt
     ```
 
-3. Set up MongoDB:
-    - Install and run MongoDB locally, or create a free MongoDB Atlas cluster and configure the connection string in the environment variables.
-
-4. Run the server:
+3. Run the server:
     ```bash
-    python app.py
+    uvicorn app:app --reload
     ```
 
 ## API Endpoints
